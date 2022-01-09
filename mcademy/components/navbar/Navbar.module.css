@@ -1,6 +1,8 @@
 .row {
     display: flex;
-    width: 100%
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
   }
   
   .row::after {
@@ -9,16 +11,16 @@
     content: "";
   }
   
-  .colone {width: 8.33%};
-  .coltwo{width: 16.66%;}
-  .colthree{width: 25%;}
+  .colone {width: 8.33%;}
+  .coltwo{width: 16.66%; padding: 10px;}
+  .colthree{width: 25%; text-align: center;}
   .colfour{width: 33.33%;}
   .colfive{width: 41.66%;}
   .colsix{width: 50%;}
   .colseven{width: 58.33%;}
   .coleight{width: 66.66%;}
   .colnine{width: 75%;}
-  .colten{width: 83.33%; margin-left: 100px;}
+  .colten{width: 83.33%;}
   .coleleven{width: 91.66%;}
   .coltwelve{width: 100%;}
   .logo{
@@ -39,4 +41,15 @@
     height: 40px;
   }
 
+
+  @media only screen and (max-width: 300px) {
+    /* For tablets: */
+  
+    .colnine{
+    width: 100%;
+    }
+    .colthree{
+width: 100%;
+    }
+  }
  

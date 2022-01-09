@@ -7,6 +7,9 @@ body {
     background-color: #FCFCFC;
 }
 
+* {
+  box-sizing: border-box;
+}
 a {
   color: inherit;
   text-decoration: none;

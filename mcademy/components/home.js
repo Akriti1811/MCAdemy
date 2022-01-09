@@ -8,9 +8,9 @@ function Homes (){
         <>
             <div className={classes.rowone}>
                <div className={classes.colnine}>
-               <h1>India's Larget MCA
+               <h1 className={classes.mca}>India's Larget MCA
                </h1>
-               <h1>
+               <h1 className={classes.mca2}>
                    TestSeries Provider
                </h1>
                </div>

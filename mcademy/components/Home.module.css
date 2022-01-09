@@ -1,18 +1,16 @@
-
 .rowone {
-    display: flex;
-    width: 100%;
-
-  }
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
 .row {
   display: flex;
   width: 100%;
   margin-top: 4%;
+  flex-wrap: wrap;
 }
 
-
-  
 .row::after {
   display: block;
   clear: both;
@@ -27,20 +25,16 @@
 }
 
 .colthree2 {
-    width: 25%;
-  
-  }
+  width: 25%;
+}
 
 .colthree {
   width: 25%;
-  height: 300px;
-  margin-left: 100px;
-  margin-top: 200px;
 }
 .colfour {
   width: 33.33%;
   text-align: center;
-  margin: 20px;
+  padding: 20px;
 }
 .colfive {
   margin: 20px;
@@ -52,20 +46,20 @@
 }
 .colsix {
   width: 50%;
-  margin: 20px;
+  padding: 20px;
 }
 .colseven {
   width: 58.33%;
 }
 .coleight {
   width: 66.66%;
-
+  box-shadow: 0px 16px 32px rgb(221 230 237 / 40%);
 }
 .colnine {
   width: 75%;
-  height: 300px;
+  /* height: 300px;
   margin-left: 100px;
-  margin-top: 200px;
+  margin-top: 200px; */
 }
 .colten {
   width: 83.33%;
@@ -89,32 +83,90 @@
   height: 40px;
 }
 
-.block{
-    display: block;
-    margin-left: 300px;
-    height: 180px;
+.block {
+  display: block;
+  margin-left: 300px;
+  height: 180px;
 }
-.block2{
-    display: block;
-    height: 200px;
-    margin-left: 40px;
+.block2 {
+  display: block;
+  height: 200px;
+  margin-left: 40px;
 }
-.block3{
-    display: block;
-    height: 200px;
-    margin-left: 0px;
+.block3 {
+  display: block;
+  height: 200px;
+  margin-left: 0px;
 }
 
-.margin20{
-    margin-left: 20px;
+.margin20 {
+  margin-left: 20px;
 }
-.goal{
+.goal {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.logo {
+  color: green;
+}
+.logo2 {
+  color: indigo;
+}
+
+.mca {
+  padding-top: 100px;
+  padding-left: 30px;
+}
+.mca2 {
+  padding-top: 0px;
+  padding-left: 30px;
+}
+
+@media only screen and (max-width: 940px) {
+  /* For tablets: */
+
+  .colone,
+  .coltwo,
+  .colthree,
+  .colfour,
+  .colfive,
+  .colsix,
+  .colseven,
+  .coleight,
+  .colnine {
+    width: 100%;
     text-align: center;
+    padding: 0px;
+  }
+
+  .block {
+    margin-left: 50px;
+  }
 }
 
-.logo{
-    color: green;
+@media only screen and (max-width: 400px) {
+  .block3 {
+    margin: 0px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
   }
-  .logo2{
-   color: indigo;
+  .block2 {
+    width: 200px;
+    height: 200px;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .colthree2 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and(max-width:400px) {
+  .colthree2 {
+    width: 100%;
+  }
+}
