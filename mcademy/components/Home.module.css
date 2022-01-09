@@ -1,0 +1,120 @@
+
+.rowone {
+    display: flex;
+    width: 100%;
+
+  }
+
+.row {
+  display: flex;
+  width: 100%;
+  margin-top: 4%;
+}
+
+
+  
+.row::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.colone {
+  width: 8.33%;
+}
+.coltwo {
+  width: 16.66%;
+}
+
+.colthree2 {
+    width: 25%;
+  
+  }
+
+.colthree {
+  width: 25%;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 200px;
+}
+.colfour {
+  width: 33.33%;
+  text-align: center;
+  margin: 20px;
+}
+.colfive {
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 16px 32px rgb(221 230 237 / 40%);
+  width: 548px;
+  height: 378px;
+  text-align: center;
+}
+.colsix {
+  width: 50%;
+  margin: 20px;
+}
+.colseven {
+  width: 58.33%;
+}
+.coleight {
+  width: 66.66%;
+
+}
+.colnine {
+  width: 75%;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 200px;
+}
+.colten {
+  width: 83.33%;
+}
+.coleleven {
+  width: 91.66%;
+}
+.coltwelve {
+  width: 100%;
+}
+
+.button {
+  background-color: #08bd80;
+  color: white;
+  margin: 22px;
+  padding: 10px;
+  border-radius: 6px;
+  font-style: bold;
+  width: 180px;
+  border: none;
+  height: 40px;
+}
+
+.block{
+    display: block;
+    margin-left: 300px;
+    height: 180px;
+}
+.block2{
+    display: block;
+    height: 200px;
+    margin-left: 40px;
+}
+.block3{
+    display: block;
+    height: 200px;
+    margin-left: 0px;
+}
+
+.margin20{
+    margin-left: 20px;
+}
+.goal{
+    text-align: center;
+}
+
+.logo{
+    color: green;
+  }
+  .logo2{
+   color: indigo;
+  }
