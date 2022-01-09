@@ -2,7 +2,7 @@ import classes from './Navbar.module.css'
 
 function navbar (){
 
-    console.log(classes);
+   
 
     return(
         
