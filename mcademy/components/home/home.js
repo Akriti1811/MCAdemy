@@ -21,15 +21,15 @@ function Homes (){
             <div className={classes.row}>
                 <div className={classes.colfive}>
                  <h2 className={classes.heading2}>Preparing For MCA</h2>
-                 <p className={classes.goal}>Your Goals</p>
-                 <button className={classes.button}>Start Learning</button>
+                 <p className={classes.goal}>Mock Test</p>
+                 <button className={classes.button}>Start  Practicing</button>
                  <img className={classes.block} src="https://static.uacdn.net/production/_next/static/images/home/k12-learning.svg?q=75&w=256" />
                
                 </div>
                 <div className={classes.colfive}>
                 <h2>Preparing For MCA</h2>
-                 <p>Your Goals</p>
-                 <button className={classes.button}>Start Learning</button>
+                 <p>Need Assistant</p>
+                 <button className={classes.button}>Check Next Free Assistant</button>
                  <img className={classes.block} src="https://static.uacdn.net/production/_next/static/images/home/k12-learning.svg?q=75&w=256" />
                 </div>
             </div>
@@ -37,19 +37,19 @@ function Homes (){
             <div className={classes.row}>
                 <div className={classes.colfour}>
                  <img className={classes.block2} src="https://static.uacdn.net/web-cms/dailyliveclasses_0c0023950f_c187155ee3.svg?q=75&w=384&fm=webp" />
-                 <h2 className={classes.heading2}>Daily Live Classes</h2>
-                 <p className={classes.goal}>Chat with educators, ask questions, answer live polls, and get your doubts cleared - all while the class is going on</p>
+                 <h2 className={classes.heading2}>Weekly Free Assistant</h2>
+                 <p className={classes.goal}>Chat with educators, ask questions, answer live polls, and get your doubts cleared - all on the live meet</p>
                 </div>
                 <div className={classes.colfour}>
                 <img className={classes.block2} src="https://static.uacdn.net/web-cms/dailyliveclasses_0c0023950f_c187155ee3.svg?q=75&w=384&fm=webp" />
-                <h2 className={classes.heading2}>Daily Live Classes</h2>
-                 <p className={classes.goal}>Chat with educators, ask questions, answer live polls, and get your doubts cleared - all while the class is going on</p>
+                <h2 className={classes.heading2}>NIMCET Free Mock Test</h2>
+                 <p className={classes.goal}>Start Practicing free mock test and know how to approach the questions and solution in the Exam Hall</p>
                
                 </div>
                 <div className={classes.colfour}>
                 <img className={classes.block2} src="https://static.uacdn.net/web-cms/dailyliveclasses_0c0023950f_c187155ee3.svg?q=75&w=384&fm=webp" />
-                <h2 className={classes.heading2}>Daily Live Classes</h2>
-                 <p className={classes.goal}>Chat with educators, ask questions, answer live polls, and get your doubts cleared - all while the class is going on</p>
+                <h2 className={classes.heading2}>NIMCET FREE Test Series</h2>
+                 <p className={classes.goal}>Try our free NIMCET Test series designed by NIMCET Toppers</p>
                
                 </div>
             </div>
@@ -60,7 +60,7 @@ function Homes (){
                  <h1 className={classes.margin20}>Start Learning with</h1>
                  <h1 className={classes.margin20}> MCAdemy </h1>
 
-                 <p className={classes.margin20}>Get unlimited access to structured courses</p>
+                 <p className={classes.margin20}>Get unlimited access to NIMCET Test Series</p>
                  <p className={classes.margin20}>& doubt clearing sessions</p>
 
                  <button className={classes.button}>Start Learning</button>
@@ -69,12 +69,12 @@ function Homes (){
                 <div className={classes.colsix}>
                     <div className={classes.row}>
                         <div className={classes.coleight}>
-                        <p className={classes.goal}>Daily Live Classes</p>
+                        <p className={classes.goal}>Weekly Assistant</p>
                         <img className={classes.block3} src="https://static.uacdn.net/web-cms/highlightgoals_96d24a04e7_a8e8de225d.svg?q=75&w=384&fm=webp" />
                        
                         </div>
                         <div className={classes.coleight}>
-                        <p className={classes.goal}>From Top educators</p>
+                        <p className={classes.goal}>From NIMCET Rankers</p>
                         <img className={classes.block3} src="https://static.uacdn.net/web-cms/highlightlive_b05ed1f073_a8042bd7a8.svg?q=75&w=384&fm=webp" /> 
                         
                         </div>
@@ -82,33 +82,7 @@ function Homes (){
                 </div>
             </div>
 
-            <div className={classes.row}>
-                <div className={classes.colthree2}>
-                <h1><span className={classes.logo}>MCA</span><span className={classes.logo2}>demy</span></h1>
-               
-                </div>
-                <div className={classes.colthree2}>
-                    <h4>Company</h4>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                </div>
-                <div className={classes.colthree2}>
-                <h4>Other Links</h4>
-                <p>Link 1</p>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                </div>
-                <div className={classes.colthree2}>
-                    <h4>Popular Goals</h4>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                    <p>Link 1</p>
-                </div>
-            </div>
+           
 
             </>
        
