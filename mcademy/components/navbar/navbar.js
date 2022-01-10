@@ -2,7 +2,9 @@ import classes from './Navbar.module.css'
 
 function navbar (){
 
-   
+   function onClickLogin(){
+   console.log("Clicked");
+   }
 
     return(
         
@@ -11,7 +13,7 @@ function navbar (){
                 <h1><span className={classes.logo}>MCA</span><span className={classes.logo2}>demy</span></h1>
                 </div>
                 <div className={classes.colthree}>
-                 <button className={classes.button}>Login</button>
+                 <button onClick={onClickLogin} className={classes.button}>Login</button>
                 </div>
             </div>
        

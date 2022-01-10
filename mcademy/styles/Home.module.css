@@ -107,6 +107,12 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+.center{
+  text-align: center;
+}
+.logo2{
+  color: indigo;
+ }
 
 @media (max-width: 600px) {
   .grid {

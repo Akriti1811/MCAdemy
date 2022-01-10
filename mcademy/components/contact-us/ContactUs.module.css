@@ -5,6 +5,7 @@
     align-items: center;
     margin: 10px;
     padding: 50px;
+    border-radius: 10px;  box-shadow: 0px 11px 32px rgb(61 89 110 / 40%);
   }
   
   .row::after {
@@ -48,10 +49,8 @@
   }
 
   .tagline{
-  
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(80px);
-  
   }
 
   .center2{
@@ -107,7 +106,5 @@
     .colone, .coltwo, .colthree, .colfour, .colfive, .colsix, .colseven, .coleight, .colnine, .colten, .coleleven, .coltwelve{
         padding-left: 0px;
     }
- 
-   
   }
  
