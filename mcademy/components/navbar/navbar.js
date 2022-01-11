@@ -1,9 +1,12 @@
 import classes from './Navbar.module.css'
+import Login from './login';
+import { useState } from 'react';
 
 function navbar (){
 
+   const [show,setShow] = useState(false); 
    function onClickLogin(){
-   console.log("Clicked");
+   setShow(!show);
    }
 
     return(
@@ -15,6 +18,8 @@ function navbar (){
                 <div className={classes.colthree}>
                  <button onClick={onClickLogin} className={classes.button}>Login</button>
                 </div>
+
+                 <Login shows={show}/>
             </div>
        
     )

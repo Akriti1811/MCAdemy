@@ -38,16 +38,94 @@
     padding: 10px;
     border-radius: 6px;
     font-size: bold;
-    width: 80px;
+    width: 120px;
     border: none;
     height: 40px;
   }
 
 
-  @media only screen and (max-width: 300px) {
+
+  .marg{
+    padding: 10px;
+}
+.input{
+ display: block;
+ width: 80%;
+ height: 34px;
+ padding: 6px 12px;
+ margin: 5px;
+ font-size: 14px;
+ line-height: 1.42857143;
+ color: rgb(22, 19, 59);
+ background-color: #fff;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+
+.Modal {
+  position: fixed;
+  z-index: 200;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  top: 30%;
+  left: 25%;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.ModalOpen{
+   display: block;
+   animation: openModal 0.3s ease-out forwards;
+}
+
+.ModalClosed{
+     display: none;
+     animation: closeModal 0.3s ease-in forwards;
+}
+
+@keyframes openModal {
+
+  0%{
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  50%{
+      opacity: .5;
+      transform: translateY(90%);
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0);
+  }
+  
+}
+
+@keyframes closeModal {
+
+  0%{
+      opacity: 1;
+      transform: translateY(0);
+  }
+  50%{
+      opacity: .5;
+      transform: translateY(60%);
+  }
+  100%{
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  
+}
+
+  @media only screen and (max-width: 600px) {
     /* For tablets: */
   
-    .colnine{
+    .colfive{
     width: 100%;
     }
     .colthree{
@@ -55,6 +133,10 @@ width: 100%;
     }
     .coleight{
       margin-left: 0px;
+    }
+    .row, .input{
+     
+      padding: 0px;
     }
   }
 
