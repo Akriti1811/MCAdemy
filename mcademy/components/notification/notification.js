@@ -1,4 +1,4 @@
-import classes from '../navbar/Navbar.module.css'
+import classes from './notification.module.css'
 
 function NotificationComponent (props){
 

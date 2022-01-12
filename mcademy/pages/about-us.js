@@ -6,7 +6,7 @@ export default function AboutUs(){
 
     return(
         <div className={styles.container}>
-        <Navbar />
+        <Navbar isLogin={false} />
         <AboutUsComponent />
         <Footer />
         </div>

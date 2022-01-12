@@ -1,4 +1,5 @@
 import classes from './Home.module.css'
+import Link from 'next/link';
 
 function Homes (){
 

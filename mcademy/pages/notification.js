@@ -10,7 +10,7 @@ export default function Notification() {
   return (
     <div className={styles.container}>
       
-     <Navbar />
+     <Navbar isLogin={false} />
      <h1 className={styles.center}> <span className={styles.logo2}>Important Notification</span> </h1>
      {
        arr.map(data =>(<NotificationComponent  key = {data.id} notice={data.notice} link={data.link} />))

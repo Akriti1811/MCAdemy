@@ -7,7 +7,7 @@ import ContactUsComponent from '../components/contact-us/contact-us'
 export default function ContactUs() {
   return (
     <div className={styles.container}>
-     <Navbar />
+     <Navbar isLogin={false} />
      <ContactUsComponent />
      <Footer />
     </div>
