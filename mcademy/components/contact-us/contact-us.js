@@ -24,7 +24,7 @@ function ContactUsComponent() {
            console.log(json);
            
            
-         const response = await fetch('/api/contactus',{
+        const response = await fetch('/api/contactus',{
              method:'POST',
              body:json,
              headers:{
@@ -32,7 +32,7 @@ function ContactUsComponent() {
              }
          });
      
-         const data  = await response.json();
+         const data  = await response.json( );
          
          if(data.acknowledged)
          {
