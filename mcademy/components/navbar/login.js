@@ -2,14 +2,23 @@ import classes from "./Navbar.module.css";
 import { Transition } from "react-transition-group";
 import { useState } from "react";
 import auth from "../../firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+
 import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 
 function Login(props) {
+
+
+  const authToken  = useSelector(state => state.authToken);
+  const dispatch = useDispatch();
+
   const [text, setText] = useState("Request Otp");
   const [number, setNumber] = useState("");
   const [otp, setOtp] = useState("");
   const widgetId = "recaptcha-container";
   const [prev,setPrev] = useState(true);
+  const router = useRouter();
 
   function onChangeNumber(e){
     e.preventDefault();
@@ -44,7 +53,7 @@ function Login(props) {
     signInWithPhoneNumber(auth, number, appVerifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
-        console.log(confirmationResult);
+       
         setText("Login");
         window.recaptchaVerifier= false;
       })
@@ -61,10 +70,14 @@ function Login(props) {
         .confirm(otp)
         .then((result) => {
           const user = result.user;
-          console.log(user);
+
+          
+          dispatch({type:"LOG IN",accessToken:user.accessToken,phoneNumber:user.phoneNumber});
+          router.push('/home');
         })
         .catch((error) => {
           console.log(error);
+          dispatch({type:"LOG OUT",accessToken:"",phoneNumber:""});
         });
    }
 
@@ -124,3 +137,4 @@ function Login(props) {
 }
 
 export default Login;
+

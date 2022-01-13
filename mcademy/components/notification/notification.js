@@ -2,8 +2,7 @@ import classes from './notification.module.css'
 
 function NotificationComponent (props){
 
-    console.log(props);
-    console.log("cehc");
+
    
 
     return(

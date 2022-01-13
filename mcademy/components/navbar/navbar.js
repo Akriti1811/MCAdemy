@@ -1,10 +1,12 @@
 import classes from './Navbar.module.css'
 import Login from './login';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 function navbar (props){
 
+   const dispatch = useDispatch();
    const [show,setShow] = useState(false); 
    function onClickLogin(){
    setShow(!show);
@@ -14,6 +16,10 @@ function navbar (props){
        window.alert("search on click");
    }
 
+   function logOutClick()
+   {
+    dispatch({type:"LOG OUT",accessToken:"",phoneNumber:""});
+   }
     return(
         
             <div className={classes.row}>
@@ -35,6 +41,7 @@ function navbar (props){
                    <img onClick={searchOnClick} className={classes.fix} src="https://www.pngitem.com/pimgs/m/179-1799665_notification-icon-png-facebook-notification-bell-icon-transparent.png" />
                    <img className={classes.fix} src="https://cdn0.iconfinder.com/data/icons/web-basics-2/24/search-512.png" />
                    <img className={classes.fix} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9H8wXJZcYknD-v3qhjeQtmSHyOvln3-YLwg&usqp=CAU" />
+                   <img onClick={logOutClick} className={classes.fix} src="https://cdn.iconscout.com/icon/premium/png-256-thumb/logout-2030711-1713351.png" />
                    </div>
                  }
 
