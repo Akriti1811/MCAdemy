@@ -1,0 +1,192 @@
+.row {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+.img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.row2 {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+.row::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.colone {
+  width: 8.33%;
+}
+.coltwo {
+  width: 16.66%;
+  padding: 10px;
+}
+.colthree {
+  width: 25%;
+  height: 400px;
+
+  text-align: center;
+}
+.colfour {
+  width: 33.33%;
+  text-align: center;
+}
+
+.colfourup{
+  width: 33.33%;
+  height: 300px;
+  border-radius: 10px; 
+   box-shadow: 0px 16px 32px rgb(61 89 110 / 40%);
+
+}
+.colfive {
+  width: 41.66%;
+  height: 350px;
+  border-radius: 10px; 
+   box-shadow: 0px 16px 32px rgb(61 89 110 / 40%);
+   padding: 10px;
+   text-align: center;
+}
+.colsix {
+  width: 50%;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px; 
+   box-shadow: 0px 16px 32px rgb(61 89 110 / 40%);
+   
+
+}
+.colseven {
+  width: 58.33%;
+}
+.coleight {
+  width: 66.66%;
+  height: 400px;
+  background-color: indigo;
+}
+.colnine {
+  width: 75%;
+}
+.colten {
+  width: 83.33%;
+}
+.coleleven {
+  width: 91.66%;
+}
+.coltwelve {
+  width: 100%;
+  background-color: indigo;
+  height: 400px;
+
+}
+.logo {
+  color: green;
+}
+.logo2 {
+  color: indigo;
+}
+.button {
+  background-color: #08bd80;
+  color: white;
+  margin: 22px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: bold;
+  width: 180px;
+  border: none;
+  height: 40px;
+}
+.center {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.tagline {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(80px);
+}
+
+.center2 {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(80px);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 2px;
+}
+
+.fit {
+  width: 100%;
+}
+.round {
+  border-radius: 50%;
+  text-align: center;
+}
+.middle {
+  padding-top: 200px;
+  color: white;
+  padding-left: 20px;
+}
+
+
+.marg{
+    padding: 10px;
+}
+.input{
+ display: block;
+ width: 80%;
+ height: 34px;
+ padding: 6px 12px;
+ font-size: 14px;
+ line-height: 1.42857143;
+ color: rgb(22, 19, 59);
+ background-color: #fff;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+.image{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+
+@media only screen and (max-width: 700px) {
+  /* For tablets: */
+
+  .colone,
+  .coltwo,
+  .colthree,
+  .colfour,
+  .colfive,
+  .colsix,
+  .colseven,
+  .coleight,
+  .colnine,
+  .colten,
+  .coleleven,
+  .coltwelve {
+    width: 100%;
+  }
+  .round {
+    width: 50%;
+  }
+  .row {
+    margin: 0px;
+  }
+}
