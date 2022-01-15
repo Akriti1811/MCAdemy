@@ -83,6 +83,7 @@ export default function Index(props) {
 
   
   async function getProfileData(){
+    try{
   const response = await fetch("/api/profiledata", {
     method: "POST",
     body: JSON.stringify(number),
@@ -90,17 +91,18 @@ export default function Index(props) {
       "Content-Type": "application/json",
     },
   });
+
   const data = await response.json();
   console.log(data);
-  try{
   setName(data.name);
   setEmail(data.email);
   setAge(data.age);
   setImage(data.image);
-  }
-  catch(error){
-    console.error(error);
-  }
+}
+catch(error){
+  console.error(error);
+}
+  
 }
 
 
