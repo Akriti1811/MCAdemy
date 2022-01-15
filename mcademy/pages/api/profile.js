@@ -11,23 +11,21 @@ export default async function Handler(req, res) {
         json[key] = profileData[key];
       }
     }
+
     var number = json.number;
     console.log(number);
 
     const db = check.db();
     const data = db.collection("profile");
-
     try{
-    const result = await data.findOne({number});
+    const result = await data.findOne({number},{upsert:true});
      if(result == null)
      {
-        const result2 = await data.insertOne(json);  
+        const result2 = await data.insertOne(json,{upsert:true});  
         console.log("result2");  
         console.log(result2);
      }
      else{
-     
-
        const result2 = await data.findOneAndUpdate({number},{$set:json})
        console.log(result2);
 
@@ -35,7 +33,7 @@ export default async function Handler(req, res) {
     }
     catch(error)
     {
-
+           console.log(error);
     }
 
     

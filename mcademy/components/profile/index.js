@@ -2,6 +2,8 @@ import { getStaticProps } from "../../pages/english/[chapter]";
 import classes from "./Index.module.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Index() {
 
@@ -9,18 +11,32 @@ export default function Index() {
   const [data,setData] = useState();
   const [name,setName] = useState();
   const [email,setEmail] = useState();
+  //const [number,setNumber] = useState();
   const [age,setAge] = useState();
   const [updateButton,setUpdateButton] = useState("Update Profile");
   const number = useSelector(state => state.number);
 
+  const router = useRouter();
+  
+  useEffect(() =>{
+    
+ 
+   
+    console.log('number',number);
+    if(number.length == null)
+    router.push("/");
+
+  },[number])
 
   async function changeImage(event){
     event.preventDefault();
+    try{
     const reader = new FileReader();
     reader.onload = function(onloadevent){
       setData(undefined);
     }
-    reader.readAsDataURL(event.target.files[0]);
+
+     reader.readAsDataURL(event.target.files[0]);
      const a = document.getElementById("file");
      console.log(a);
      
@@ -29,7 +45,6 @@ export default function Index() {
      formData.append('file',file);
      formData.append('upload_preset','my-uploads');
 
-
      const data = await fetch('https://api.cloudinary.com/v1_1/desmedw4y/image/upload',{
        method:'POST',
        body:formData
@@ -37,6 +52,11 @@ export default function Index() {
 
      console.log(data.secure_url);
      setImage(data.secure_url);
+    }
+    catch(error)
+    {
+      console.log(error);
+    }
 
   }
  
@@ -44,8 +64,9 @@ export default function Index() {
   async function updateProfile(){
 
     const json = {
-      name:name,email:email,age:age,image:image,number:"1233"
+      name:name,email:email,age:age,image:image,number
     }
+    console.log(json);
     const response = await fetch('/api/profile',{
       method:'POST',
       body:JSON.stringify(json),
@@ -66,6 +87,7 @@ export default function Index() {
 
 
   }
+
 
   return (
     <>
@@ -94,14 +116,10 @@ export default function Index() {
             />
           </div>
           <div className={classes.marg}>
-            <input
+            <p
               className={classes.input}
-              type="number"
-              readOnly
-              value={number}
-              placeholder="Mobile Number"
-              
-            />
+            >{number}</p>
+           
           </div>
           <div className={classes.marg}>
             <input
