@@ -4,95 +4,115 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { async } from "@firebase/util";
 
-export default function Index() {
-
-  const [image,setImage] = useState();
-  const [data,setData] = useState();
-  const [name,setName] = useState();
-  const [email,setEmail] = useState();
+export default function Index(props) {
+  const [image, setImage] = useState();
+  const [data, setData] = useState();
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [flag,setFlag] = useState(true);
   //const [number,setNumber] = useState();
-  const [age,setAge] = useState();
-  const [updateButton,setUpdateButton] = useState("Update Profile");
-  const number = useSelector(state => state.number);
+  const [age, setAge] = useState();
+  const [updateButton, setUpdateButton] = useState("Update Profile");
+  const number = useSelector((state) => state.number);
 
   const router = useRouter();
-  
-  useEffect(() =>{
-    
- 
-   
-    console.log('number',number);
-    if(number.length == null)
-    router.push("/");
 
-  },[number])
+  useEffect(() => {
+    console.log("number", number);
+    if (number.length == null) router.push("/");
+  }, [number]);
 
-  async function changeImage(event){
+  async function changeImage(event) {
     event.preventDefault();
-    try{
-    const reader = new FileReader();
-    reader.onload = function(onloadevent){
-      setData(undefined);
-    }
+    try {
+      const reader = new FileReader();
+      reader.onload = function (onloadevent) {
+        setData(undefined);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+      const a = document.getElementById("file");
+      console.log(a);
+      const formData = new FormData();
+      for (const file of a.files) formData.append("file", file);
+      formData.append("upload_preset", "my-uploads");
 
-     reader.readAsDataURL(event.target.files[0]);
-     const a = document.getElementById("file");
-     console.log(a);
+      const data = await fetch(
+        "https://api.cloudinary.com/v1_1/desmedw4y/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      ).then((r) => r.json());
+
      
-     const formData = new FormData();
-     for(const file of a.files)
-     formData.append('file',file);
-     formData.append('upload_preset','my-uploads');
-
-     const data = await fetch('https://api.cloudinary.com/v1_1/desmedw4y/image/upload',{
-       method:'POST',
-       body:formData
-     }).then(r => r.json());
-
-     console.log(data.secure_url);
-     setImage(data.secure_url);
-    }
-    catch(error)
-    {
+      console.log(data.secure_url);
+      setImage(data.secure_url);
+   
+      
+    } catch (error) {
       console.log(error);
     }
-
   }
+
+  async function updateProfile() {
+    const json = {
+      name: name,
+      email: email,
+      age: age,
+      image: image,
+      number,
+    };
+    console.log(json);
+    const response = await fetch("/api/profile", {
+      method: "POST",
+      body: JSON.stringify(json),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+   
+      setUpdateButton("Profile Updated");
+      getProfileData();
+   
+  }
+
+  
+  async function getProfileData(){
+  const response = await fetch("/api/profiledata", {
+    method: "POST",
+    body: JSON.stringify(number),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+  try{
+  setName(data.name);
+  setEmail(data.email);
+  setAge(data.age);
+  setImage(data.image);
+  }
+  catch(error){
+    console.error(error);
+  }
+}
+
+
+
+ 
  
 
-  async function updateProfile(){
-
-    const json = {
-      name:name,email:email,age:age,image:image,number
-    }
-    console.log(json);
-    const response = await fetch('/api/profile',{
-      method:'POST',
-      body:JSON.stringify(json),
-      headers:{
-          'Content-Type':'application/json'
-      }
-  });
-
-  const data  = await response.json( );
-         
-  if(data.acknowledged)
-  {
-       setUpdateButton("Profile Updated");
-  }
-  else{
-      setUpdateButton("Profile Updating Failed")
-  }
-
-
-  }
 
 
   return (
     <>
       <div className={classes.row}>
-        
         <div className={classes.coltwelve}>
           <div className={classes.middle}>
             <h2>Hi. Piyush</h2>
@@ -101,8 +121,12 @@ export default function Index() {
               Others user can see your profile except your phone Number and they
               can follow you
             </p>
+            <button className={classes.button} onClick={getProfileData}>
+            Show Profile
+          </button>
           </div>
         </div>
+      
       </div>
 
       <div className={classes.row2}>
@@ -116,10 +140,7 @@ export default function Index() {
             />
           </div>
           <div className={classes.marg}>
-            <p
-              className={classes.input}
-            >{number}</p>
-           
+            <p className={classes.input}>{number}</p>
           </div>
           <div className={classes.marg}>
             <input
@@ -147,30 +168,35 @@ export default function Index() {
               onChange={(e) => setAge(e.target.value)}
             />
           </div>
-          <button className={classes.button} onClick={updateProfile}>{updateButton} </button>
+          <button className={classes.button} onClick={updateProfile}>
+            {updateButton}{" "}
+          </button>
         </div>
 
         <div className={classes.colfive}>
-
-          <img id="image" src={image} className={classes.image}/>
+          <img id="image" src={image} className={classes.image} />
+          <h3>{name}</h3>
+          <p>{email}</p>
+          <p>{age}</p>
           <div className={classes.row2}>
-
             <div className={classes.colfour}>
               <h4> 15 </h4>
-            <h3>Followers</h3>
+              <h3>Followers</h3>
             </div>
             <div className={classes.colfour}>
-            <h4> 15 </h4>
-            <h3>Followers</h3>
+              <h4> 15 </h4>
+              <h3>Followers</h3>
             </div>
             <div className={classes.colfour}>
-            <h4> 15 </h4>
-            <h3>Followers</h3>
+              <h4> 15 </h4>
+              <h3>Followers</h3>
             </div>
-           
           </div>
         </div>
       </div>
     </>
   );
 }
+
+
+

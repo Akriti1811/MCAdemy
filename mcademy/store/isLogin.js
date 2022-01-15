@@ -7,11 +7,10 @@ function isLogin(){
 
   if(accessToken)
   {
-    console.log("ohhhoo");
+ 
     flag = true;
   }
 
-  console.log(flag);
   return flag;
 
 }

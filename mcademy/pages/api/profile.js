@@ -42,6 +42,26 @@ export default async function Handler(req, res) {
 
   }
   if (req.method == "GET") {
-    res.send({ name: "hi" });
+    const check = await Connection();
+
+
+    const db = check.db();
+    const data = db.collection("profile");
+    const number = req.body;
+    console.log(number);
+    try{
+    const result = await data.findOne({number});
+    
+     res.send(result);
+    }
+    catch(error)
+    {
+           console.log(error);
+    }
+
+    
+    check.close();
+    res.send({ name: "j" });
   }
+
 }
