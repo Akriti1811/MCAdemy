@@ -117,7 +117,7 @@ catch(error){
       <div className={classes.row}>
         <div className={classes.coltwelve}>
           <div className={classes.middle}>
-            <h2>Hi. Piyush</h2>
+            <h2>Hi. {name}</h2>
             <p>
               This is your profile page. You can make changes your profile.
               Others user can see your profile except your phone Number and they
