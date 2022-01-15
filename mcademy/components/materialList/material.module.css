@@ -1,0 +1,72 @@
+
+
+  .rowlogin {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+   
+    background-color: white;
+    align-items: center;
+    margin: 0px;
+    padding: 1px;
+    border-radius: 2px;  
+  }
+  
+
+
+  .row::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+  
+  .colone {width: 8.33%;}
+  .coltwo{width: 16.66%; padding: 10px;}
+  .colthree{width: 25%; text-align: center;}
+  .colfour{width: 33.33%;}
+  .colfive{width: 41.66%;}
+  .colsix{width: 50%;}
+  .colseven{width: 58.33%;}
+  .coleight{width: 66.66%; margin-left: 120px; text-align: center; padding: 20px; border-radius: 10px;  box-shadow: 0px 16px 32px rgb(61 89 110 / 40%);}
+  .colnine{width: 75%;}
+  .colten{width: 83.33%;}
+  .coleleven{width: 91.66%;}
+  .coltwelve{width: 100%; padding: 20px; border-radius: 10px;  box-shadow: 0px 16px 32px rgb(61 89 110 / 40%); }
+  .logo{
+    color: green;
+  }
+  .logo2{
+   color: indigo;
+  }
+  .button{
+    background-color: #08bd80;
+    color:white;
+    margin: 22px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: bold;
+    width: 120px;
+    border: none;
+    height: 40px;
+  }
+
+  .para{
+    background-color: rgba(29, 118, 232, 0.15); margin: 20px; 
+    height: 80px;
+    border-radius: 6px;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: indigo;
+  }
+  .para:hover{
+      color: white;
+      background-color: indigo;
+  }
+
+
+  .marg{
+    padding: 10px;
+}
+
+
+  

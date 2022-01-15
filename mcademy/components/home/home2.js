@@ -6,10 +6,11 @@ function Home2() {
         <div className={classes.colthree}>
           <div className={classes.left}>
             <h3>Home</h3>
-            <h3>Browse</h3>
+            <h3>Concept Videos</h3>
+            <h3>Study Material</h3>
+            <h3>Online Test Series</h3>
             <h3>Practice</h3>
-            <h3>Test</h3>
-            <h3>Syllabus</h3>
+            <h3>Syllabus</h3>  
             <h3>Free Live Classes</h3>
           </div>
         </div>

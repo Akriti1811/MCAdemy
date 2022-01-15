@@ -30,7 +30,7 @@ function Login(props) {
     e.preventDefault();
 
     if (text === "Request Otp") {
-      if (number.length == 13) {
+      if (number.length == 12) {
         setPrev(false);
         window.recaptchaVerifier = new RecaptchaVerifier(
           "recaptcha-container",
