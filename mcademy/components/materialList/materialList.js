@@ -6,27 +6,10 @@ const list = [
     "Previous Year Papers",
     "NCERT Solutions",
     "Notes",
-    "NCERT Books",
-    "Formula Sheets",
-    "Previous Year Papers",
-    "NCERT Solutions",
-    "Notes",
-    "NCERT Books",
-    "Formula Sheets",
-    "Previous Year Papers",
-    "NCERT Solutions",
-    "Notes",
-    "NCERT Books",
-    "Formula Sheets",
-    "Previous Year Papers",
-    "NCERT Solutions",
-    "Notes",
+    
   ];
 
 export default function MaterialList(props){
-
-   
-
 
     return(<>
     

@@ -5,19 +5,18 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const list = [
-  "NCERT Books",
-  "Formula Sheets",
-  "Previous Year Papers",
-  "NCERT Solutions",
-  "Notes",
- 
-];
-function MaterialMain(props) {
+    "Maths",
+    "Reasoning",
+    "English",
+    "Computer",
+  ];
+  
+ function VideoMain(props){
     const router = useRouter();
 
-    function getMaterial(event){
+    function getVideo(event){
         console.log(event.target.textContent);
-        router.push(`study-material/${event.target.textContent}`)
+        router.push(`videos/${event.target.textContent}`)
 
     }
   return (
@@ -26,11 +25,11 @@ function MaterialMain(props) {
       <div className={classes.row}>
         {list.map((data) => (
 
-          <div  className={classes.colthree}  onClick={getMaterial}>{data}</div>
+          <div  className={classes.colthree}  onClick={getVideo}>{data}</div>
         ))}
       </div>
     </>
   );
 }
 
-export default MaterialMain;
+export default VideoMain;

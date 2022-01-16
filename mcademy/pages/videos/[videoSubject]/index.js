@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import  Navbar from "../../../components/navbar/navbar";
 import MaterialList from "../../../components/materialList/materialList";
-function Material(props)
+function Video(props)
 {
     
     return(
@@ -16,28 +16,28 @@ function Material(props)
 export function getStaticPaths(){
 
 const list = [
-    "NCERT Books",
-    "Formula Sheets",
-    "Previous Year Papers",
-    "NCERT Solutions",
-    "Notes",
+    "Maths",
+    "Reasoning",
+    "English",
+    "Computer",
   ];
+  
     return{
         fallback: false,
         paths:list.map((data) =>({
-          params:{material:data},
+          params:{videoSubject:data},
         }))
     }
 }
 
 export async function getStaticProps(context){
 
-   const material = context.params.material;
+   const video = context.params.videoSubject;
     return {
         props:{
-            material:material
+            video:video
         }
     }
 }
 
-export default Material;
+export default Video;
